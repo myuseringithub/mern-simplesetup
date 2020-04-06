@@ -28,6 +28,7 @@ app.listen(port, function onStart(err) {
 const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/mernSimpleSetup'
 // Use connect method to connect to the server
 MongoClient.connect(url, (err, db)=>{
+  if(err) throw err
   console.log("Connected successfully to mongodb server")
   db.close()
 })
